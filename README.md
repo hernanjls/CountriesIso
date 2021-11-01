@@ -4,7 +4,7 @@ For run the web api
 
 1) Create a SQL SERVER database called CountryISODB
 2) In the file "appsettings.json" modify the connection string with the credentials to use in your instance of sql server
-3) In Visual Studio 2009 open the web api solution and with the tool "package manager console"
+3) In Visual Studio 2019 open the web api solution and with the tool "package manager console"
    execute the command "update-database", this will create the database with test records.
 
 4) Execute the solution in Visual studio with F5, this will open in the default browser the swager web page with the documentation of the web api
