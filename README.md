@@ -15,6 +15,6 @@ For run the Xamarin app
 1) Open the solution in visual studio 2019 and restore the Nuget packages
 2) in the App.xaml.cs file of the Xamarin Forms project, Modify the URL of the Api web (I use a proxy with a program called sharproxy https://github.com/jocull/SharpProxy)
 3) with F5 run the application in some android emulator (I use genymotion)
-
+4) Register an new user (Email and Password) and following, login with this new user
 
 Voila
