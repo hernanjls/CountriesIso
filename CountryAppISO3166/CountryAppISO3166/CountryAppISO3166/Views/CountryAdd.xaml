@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CountryAppISO3166.Views.CountryAdd"
+             xmlns:viewModels="clr-namespace:CountryAppISO3166.ViewModels"
+             Title="Create New Country">
+
+    <ContentPage.BindingContext>
+        <viewModels:AddCountryViewModel />
+    </ContentPage.BindingContext>
+
+    <StackLayout VerticalOptions="Center"
+                 Spacing="20"
+                 Padding="20">
+
+        <Entry Text="{Binding SelectedItem.FullName}"
+               FontSize="24"
+               Placeholder="FullName" />
+
+
+        <Entry Text="{Binding SelectedItem.ShortName}"
+               FontSize="24"
+               Placeholder="ShortName" />
+
+        <Entry Text="{Binding SelectedItem.Alpha2Code}"
+               FontSize="24"
+               Placeholder="Alpha2Code" />
+
+
+        <Entry Text="{Binding SelectedItem.Alpha3Code}"
+               FontSize="24"
+               Placeholder="Alpha3Code" />
+
+        <Entry Text="{Binding SelectedItem.NumericCode}"
+               FontSize="24"
+               Placeholder="NumericCode" />
+
+
+        <Button Text="Send Country"
+                BackgroundColor="DodgerBlue"
+                TextColor="White"
+                FontSize="30"
+                Command="{Binding SendItemCommand}" />
+
+    </StackLayout>
+
+</ContentPage>

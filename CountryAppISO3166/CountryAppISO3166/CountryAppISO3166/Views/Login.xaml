@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CountryAppISO3166.Views.Login"
+             Title="Countries App">
+    
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="30" Spacing="40">
+            
+            <Frame BackgroundColor="White" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Email"   
+                           PlaceholderColor="Gray" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="Black"/>
+                    <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Password"   
+                           PlaceholderColor="Gray" HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="Black"/>
+                </StackLayout>
+            </Frame>
+            <Button Command="{Binding SubmitCommand}" Text="Login" TextColor="White"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#088da5" />
+
+            <BoxView Margin="20,10" HeightRequest="1" 
+                         BackgroundColor="{StaticResource SeperatorColor}"/>
+
+
+            <StackLayout Orientation="Horizontal">
+
+                <Label>Not have an Account?</Label>
+                <Label Grid.Row="2" Grid.Column="0" Text="Register" FontSize="14" HorizontalOptions="Start" TextColor="#2193f3" >
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="register_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+
+            </StackLayout>
+            
+            
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

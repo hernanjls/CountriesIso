@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="CountryAppISO3166.Views.CountrySearch"
+             Title="Country List">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked">
+        </ToolbarItem>
+        
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="1" />
+            </Grid.RowDefinitions>
+
+            <Frame Padding="16,0,16,0" Grid.Row="0"  VerticalOptions="CenterAndExpand" HeightRequest="60" HasShadow="False">
+
+                <Grid MinimumHeightRequest="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <inputLayout:SfTextInputLayout
+                    x:Name="searchText" 
+                    Hint="Search Country">
+                        <Entry TextChanged="Entry_TextChanged" />
+                    </inputLayout:SfTextInputLayout>
+
+                    <Button Margin="4" 
+                        BorderWidth="2" 
+                        BorderRadius="10" 
+                        Text="Filter" 
+                        Grid.Column="1" Clicked="search_Clicked" />
+                </Grid>
+
+            </Frame>
+
+            <ActivityIndicator x:Name="acIndicator" 
+                               IsVisible="{Binding IsBusy}" 
+                               IsRunning="{Binding IsBusy}"
+                               Grid.Row="1"
+                               WidthRequest="32" 
+                               HeightRequest="32"  />
+
+
+            <ListView  Grid.Row="1" RowHeight="90" ItemsSource="{Binding ItemsViewModel}" ItemTapped="ListView_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid Margin="10,0,10,0" RowSpacing="0" ColumnSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="AUTO"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="AUTO"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+
+                                <controls:CircleImage Source="{Binding CountryFlag}" Style="{StaticResource CountryCircleImage}"/>
+
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding FullName}" Style="{StaticResource CountryNameLabel}" />
+                                    <Label Text="{Binding Alpha3Code}" Style="{StaticResource Alpha3CodeLabel}"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Column="2" VerticalOptions="Center">
+                                    <Label Text="{Binding SubRegionsCount}" Style="{StaticResource PointsLabel}"/>
+
+                                </StackLayout>
+
+                                <BoxView HeightRequest="1" Grid.Row="1" Grid.Column="1" BackgroundColor="{StaticResource SeperatorColor}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <BoxView Grid.Row="2" BackgroundColor="#ccc" Margin="0"  HeightRequest="1" HorizontalOptions="FillAndExpand" ></BoxView>
+
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
