@@ -98,22 +98,7 @@ namespace AspNetIdentityDemo.Api.Controllers
             return BadRequest("Some properties are not valid"); // Status code: 400
         }
 
-        //[HttpGet("[action]/{orderId}")]
-        //public IActionResult OrderDetails(int orderId)
-        //{
-
-        //    var _orders = _dbContext.Orders.Where(order => order.Id == orderId)
-        //           .Include(order => order.OrderDetails)
-        //           .ThenInclude(product => product.Product);
-
-
-        //    var _orderView = _dbContext.OrdersView.Where(order => order.Id == orderId).SingleOrDefault();
-
-        //    return Ok(new { orders = _orders, orderView = _orderView });
-
-        //}
-
-
+      
 
         // /api/Country/postsubregion
         [HttpPost("Postsubregion")]
