@@ -87,9 +87,9 @@ namespace AspNetIdentityDemo.Api
 
                 options.SwaggerDoc(groupName, new OpenApiInfo
                 {
-                    Title = $"Foo {groupName}",
+                    Title = $"Countries {groupName}",
                     Version = groupName,
-                    Description = "Foo API",
+                    Description = "Countries API",
                     Contact = new OpenApiContact
                     {
                         Name = "Foo Company",

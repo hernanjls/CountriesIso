@@ -27,19 +27,14 @@ namespace CountryAppISO3166.Services
 
         public async Task<List<Country>> getCountriesByTerm(string term)
         {
-            string UrlApi = App.UrlApi + "country/search";
+            string UrlApi = App.UrlApi + "country/search/" + term;
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
 
-            var jsonData = JsonConvert.SerializeObject(term);
-
-            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-            var response = await httpClient.PostAsync(UrlApi, content);
-
-            var responseBody = await response.Content.ReadAsStringAsync();
             
-            var items = JsonConvert.DeserializeObject<List<Country>>(responseBody);
+            var response = await httpClient.GetStringAsync(UrlApi);
+
+            var items = JsonConvert.DeserializeObject<List<Country>>(response);
 
             return items;
         }
@@ -67,22 +62,18 @@ namespace CountryAppISO3166.Services
 
         public async Task<List<SubRegion>> getSubRegionsByCountry(int countryId)
         {
-            string UrlApi = App.UrlApi + "country/subregions";
+            string UrlApi = App.UrlApi + "country/subregions/" + countryId;
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
 
-            var jsonData = JsonConvert.SerializeObject(countryId);
+            var response = await httpClient.GetStringAsync(UrlApi);
 
-            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-            var response = await httpClient.PostAsync(UrlApi, content);
-
-            var responseBody = await response.Content.ReadAsStringAsync();
-
-            var items = JsonConvert.DeserializeObject<List<SubRegion>>(responseBody);
+            var items = JsonConvert.DeserializeObject<List<SubRegion>>(response);
 
             return items;
         }
+
+        
 
         public async Task<SubRegion> postSubRegion(SubRegion item)
         {
@@ -113,7 +104,7 @@ namespace CountryAppISO3166.Services
 
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
-            var response = await httpClient.PostAsync(UrlApi, content);
+            var response = await httpClient.PutAsync(UrlApi, content);
 
             var responseBody = await response.Content.ReadAsStringAsync();
 
@@ -124,15 +115,11 @@ namespace CountryAppISO3166.Services
 
         public async Task<string> deleteSubRegion(SubRegion item)
         {
-            string UrlApi = App.UrlApi + "country/deletesubregion";
+            string UrlApi = App.UrlApi + "country/deletesubregion/" + item.SubRegionID;
             var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", App.accessToken);
 
-            var jsonData = JsonConvert.SerializeObject(item);
-
-            var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-
-            var response = await httpClient.PostAsync(UrlApi, content);
+            var response = await httpClient.DeleteAsync(UrlApi);
 
             var responseBody = await response.Content.ReadAsStringAsync();
 

@@ -36,8 +36,8 @@ namespace AspNetIdentityDemo.Api.Controllers
         }
 
         // /api/Country/search
-        [HttpPost("Search")]
-        public async Task<IActionResult> GetCountryAsync([FromBody] string term)
+        [HttpGet("Search/{term}")]
+        public async Task<IActionResult> GetCountryAsync(string term)
         {
             if (ModelState.IsValid)
             {
@@ -52,7 +52,7 @@ namespace AspNetIdentityDemo.Api.Controllers
 
         // GET: api/country/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetCountry([FromRoute] int id)
+        public async Task<IActionResult> GetCountry(int id)
         {
             if (!ModelState.IsValid)
             {
@@ -85,8 +85,8 @@ namespace AspNetIdentityDemo.Api.Controllers
         }
 
         // /api/Country/subregions
-        [HttpPost("Subregions")]
-        public async Task<IActionResult> GetSubRegionsAsync([FromBody] int id)
+        [HttpGet("Subregions/{id}")]
+        public async Task<IActionResult> GetSubRegionsAsync(int id)
         {
             if (ModelState.IsValid)
             {
@@ -97,6 +97,22 @@ namespace AspNetIdentityDemo.Api.Controllers
 
             return BadRequest("Some properties are not valid"); // Status code: 400
         }
+
+        //[HttpGet("[action]/{orderId}")]
+        //public IActionResult OrderDetails(int orderId)
+        //{
+
+        //    var _orders = _dbContext.Orders.Where(order => order.Id == orderId)
+        //           .Include(order => order.OrderDetails)
+        //           .ThenInclude(product => product.Product);
+
+
+        //    var _orderView = _dbContext.OrdersView.Where(order => order.Id == orderId).SingleOrDefault();
+
+        //    return Ok(new { orders = _orders, orderView = _orderView });
+
+        //}
+
 
 
         // /api/Country/postsubregion
@@ -115,7 +131,7 @@ namespace AspNetIdentityDemo.Api.Controllers
         }
 
         // /api/Country/putsubregion
-        [HttpPost("Putsubregion")]
+        [HttpPut("Putsubregion")]
         public async Task<IActionResult> putSubRegionAsync([FromBody] SubRegion model)
         {
             if (!ModelState.IsValid)
@@ -130,15 +146,16 @@ namespace AspNetIdentityDemo.Api.Controllers
         }
 
         // /api/Country/deletesubregion
-        [HttpPost("Deletesubregion")]
-        public async Task<IActionResult> deleteSubRegionAsync([FromBody] SubRegion model)
+        [HttpDelete("Deletesubregion/{id}")]
+        public async Task<IActionResult> deleteSubRegionAsync(int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            await _repository.DeleteSubRegion(model);
+           
+            await _repository.DeleteSubRegion(id);
 
             return Ok("deleted");
 

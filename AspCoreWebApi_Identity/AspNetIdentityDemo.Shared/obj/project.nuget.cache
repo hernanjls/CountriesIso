@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "YR0UGTuqX7AEJmcLyMC8QB9JRb1msJz1+ECveznaOBScCwagRkyl8nvofJJtv7IbVmiY76PsHSVKso/BVt8hOA==",
+  "success": true,
+  "projectFilePath": "D:\\TRABAJOS\\xamaringuateapp\\prueba\\AspCoreWebApi_Identity\\AspNetIdentityDemo.Shared\\AspNetIdentityDemo.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\USUARIO\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

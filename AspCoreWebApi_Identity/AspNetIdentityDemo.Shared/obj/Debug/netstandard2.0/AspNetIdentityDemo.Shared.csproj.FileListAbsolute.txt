@@ -1,0 +1,10 @@
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\bin\Debug\netstandard2.0\AspNetIdentityDemo.Shared.deps.json
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\bin\Debug\netstandard2.0\AspNetIdentityDemo.Shared.dll
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\bin\Debug\netstandard2.0\AspNetIdentityDemo.Shared.pdb
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\obj\Debug\netstandard2.0\AspNetIdentityDemo.Shared.csproj.AssemblyReference.cache
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\obj\Debug\netstandard2.0\AspNetIdentityDemo.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\obj\Debug\netstandard2.0\AspNetIdentityDemo.Shared.AssemblyInfoInputs.cache
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\obj\Debug\netstandard2.0\AspNetIdentityDemo.Shared.AssemblyInfo.cs
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\obj\Debug\netstandard2.0\AspNetIdentityDemo.Shared.csproj.CoreCompileInputs.cache
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\obj\Debug\netstandard2.0\AspNetIdentityDemo.Shared.dll
+D:\TRABAJOS\xamaringuateapp\prueba\AspCoreWebApi_Identity\AspNetIdentityDemo.Shared\obj\Debug\netstandard2.0\AspNetIdentityDemo.Shared.pdb

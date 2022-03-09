@@ -21,7 +21,7 @@ namespace AspNetIdentityDemo.Api.Services
 
         Task CreateSubRegion(SubRegion reg);
         Task UpdateSubRegion(SubRegion reg);
-        Task DeleteSubRegion(SubRegion reg);
+        Task DeleteSubRegion(int SubRegionID);
     }
 
     public class CountryService : ICountryService
@@ -116,15 +116,16 @@ namespace AspNetIdentityDemo.Api.Services
 
         }
 
-        public async Task DeleteSubRegion(SubRegion reg)
+        public async Task DeleteSubRegion(int SubRegionID)
         {
-            var item = _context.SubRegions.Where(x => x.SubRegionID.Equals(reg.SubRegionID)).SingleOrDefault();
+            var item = _context.SubRegions.Where(x => x.SubRegionID.Equals(SubRegionID)).SingleOrDefault();
+            var countryId = item.CountryID;
 
             if (item != null)
             {
                 _context.SubRegions.Remove(item);
 
-                var country = _context.Countries.Where(x => x.CountryID.Equals(reg.CountryID)).SingleOrDefault();
+                var country = _context.Countries.Where(x => x.CountryID.Equals(countryId)).SingleOrDefault();
                 country.SubRegionsCount = country.SubRegionsCount - 1;
 
             }
